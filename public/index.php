@@ -3,18 +3,11 @@ require('../vendor/autoload.php');
 $dotenv = Dotenv\Dotenv::createImmutable('../');
 $dotenv->load();
 
-$controller = isset($_REQUEST['controller']) ? $_REQUEST['controller'] : 'Default';
-$accion = isset($_REQUEST['action']) && $_REQUEST['action'] !== "" ? $_REQUEST['action'] : 'Index';
+require_once('../controllers/controllerManager.php');
 
-$controller = file_exists("../controllers/$controller.controller.php") ? $controller : 'Error';
+$controllerManager = new controllerManager();
 
-require_once "../controllers/$controller.controller.php";
-$controller = ucwords($controller) . 'Controller';
-$controller = new $controller;
+$controller_name = isset($_REQUEST['controller']) ? $_REQUEST['controller'] : 'Default';
+$action_name = isset($_REQUEST['action']) && $_REQUEST['action'] !== "" ? $_REQUEST['action'] : 'Index';
 
-if (!is_callable(array($controller, $accion))){
-    require_once "../controllers/Error.controller.php";
-    $controller = new ErrorController;
-    $accion = 'Index';
-}
-call_user_func( array( $controller, $accion ) );
+$controllerManager->executeAction($controller_name, $action_name);
