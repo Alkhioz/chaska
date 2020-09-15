@@ -1,0 +1,15 @@
+{
+	"/muskuna": {
+		"controller": "default",
+		"action": "index",
+		"method": "GET"
+	},"/muskuna/user/login": {
+		"controller": "user",
+		"action": "login",
+		"method": "POST"
+	},"/error": {
+		"controller": "error",
+		"action": "index",
+		"method": "GET"
+	}
+}
