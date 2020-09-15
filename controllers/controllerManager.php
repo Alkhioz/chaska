@@ -17,7 +17,7 @@ class controllerManager{
 
     public function constructController($controller_name){
         $name = $this->checkController($controller_name);
-        require "../controllers/$name.controller.php";
+        require_once "../controllers/$name.controller.php";
         $customController = ucwords($name) . 'Controller';
         $this->controller= new $customController;
     }

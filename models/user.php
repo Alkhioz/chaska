@@ -44,7 +44,8 @@ class user
 			$result = json_encode($stmt->fetchAll(PDO::FETCH_OBJ));
 			$this->pdo=null;
 			header('Content-Type: application/json');	 
-			return $this->jwtmanager->encode($result);
+			/*return $this->jwtmanager->encode($result);*/
+			return 'logueado';
 		}catch(PDOException $e){
 			die($e->getMessage());
 		}
