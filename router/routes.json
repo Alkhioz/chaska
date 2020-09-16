@@ -7,6 +7,10 @@
 		"controller": "user",
 		"action": "login",
 		"method": "POST"
+	},"/muskuna/user": {
+		"controller": "user",
+		"action": "index",
+		"method": "POST"
 	},"/error": {
 		"controller": "error",
 		"action": "index",
