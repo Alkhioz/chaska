@@ -1,20 +1,17 @@
 <?php
 
 require_once '../models/database.php';
-require_once '../models/jwtmanager.php';
 
 class user
 {
 	private $pdo;
 	private $username;
 	private $password;
-	private $jwtmanager;
 
 	public function __CONSTRUCT()
 	{
 		try{
-			$this->pdo = Database::StartUp();
-			$this->jwtmanager = new jwtmanager();   
+			$this->pdo = Database::StartUp(); 
 		}catch(Exception $e)
 		{
 			die($e->getMessage());
@@ -43,20 +40,11 @@ class user
 				);
 			$result = json_encode($stmt->fetchAll(PDO::FETCH_OBJ));
 			$this->pdo=null;
-			header('Content-Type: application/json');	 
-			/*return $this->jwtmanager->encode($result);*/
-			return 'logueado';
+			header('Content-Type: application/json');
+			return $result;
 		}catch(PDOException $e){
 			die($e->getMessage());
 		}
 	}
-	/*public function comprobar_tocken(){
-		try{	 
-			$result =$_REQUEST['key'];
-			return $this->jwtmanager->decode($result);
-		}catch(PDOException $e){
-			die($e->getMessage());
-		}
-	}*/
 
 }
