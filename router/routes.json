@@ -1,13 +1,13 @@
 {
-	"/muskuna": {
+	"/chaska": {
 		"controller": "default",
 		"action": "index",
 		"method": "GET"
-	},"/muskuna/user/login": {
+	},"/chaska/user/login": {
 		"controller": "user",
 		"action": "login",
 		"method": "POST"
-	},"/muskuna/user": {
+	},"/chaska/user": {
 		"controller": "user",
 		"action": "index",
 		"method": "POST"

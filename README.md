@@ -1,1 +1,2 @@
-# Backend in case we can not use sympony
+# Chaska | A proof of concept php framework
+## This is by no means ready for production
