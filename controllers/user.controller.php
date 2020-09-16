@@ -10,8 +10,11 @@ class userController{
     }
     
     public function Index(){
+        require_once '../views/header.php';
         require_once '../views/default.php';
         echo "<br> USER PAGE";
+        require_once '../views/footer.php';
+        
     }
 
     public function Login(){

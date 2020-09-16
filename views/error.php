@@ -1,3 +1,3 @@
 <?php
-    echo "The default error page :(";
+    echo "<p>The default error page :(</p>";
     

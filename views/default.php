@@ -1,2 +1,2 @@
 <?php
-    echo "The default page :)";
+    echo "<p>The default page :)<p>";
